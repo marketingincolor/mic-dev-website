@@ -1,180 +1,227 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>MIC Development and Testing Domain</title>
-<style>
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+<!DOCTYPE html>
+<html lang="en">
+	<head>
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-margin: 0;
-padding: 0;
-border: 0;
-font-size: 100%;
-font: inherit;
-vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-display: block;
-}
-body {
-line-height: 1;
-}
-ol, ul {
-list-style: none;
-}
-blockquote, q {
-quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-content: '';
-content: none;
-}
-table {
-border-collapse: collapse;
-border-spacing: 0;
-}
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
-/* site-specific CSS changes: */
-/* Steel Colour Scheme:
-2A3134 - main bg color
-49555A
-3F494D
-B2CED9
-7E929A
-*/
+		<!-- Foundation -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.2/foundation.min.css" />
 
-body {
-font-family: arial, helvetica;
-background-color: #2A3134;
-color: #fff;
-}
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-h1 { font-size: 24pt; }
-h2 { font-size: 19pt; }
-h3 { font-size: 16pt; }
-h4 { font-size: 12pt; }
+		<script>
+		$( document ).ready(function() {
 
-.block { margin: 20px; padding:20px; }
+			//Default to show only development tables
+			$( '.development').show(); 
+			$( '.archive' ).hide();
 
-.bc1 { background-color: #49555A; }
-.bc2 { background-color: #3F494D; }
-.bc3 { background-color: #B2CED9; }
-.bc4 { background-color: #7E929A; }
+			//Default to change colors
+			$( '.contain-to-grid' ).css( "background-color","#2980b9" );
 
-.c0 { color: #2A3134; }
-.c1 { color: #49555A; }
-.c2 { color: #3F494D; }
-.c3 { color: #B2CED9; }
-.c4 { color: #7E929A; }
+			//Show Hide on Button Clicks
+			$( "#archive" ).click(function(){
+				$( ".archive" ).show();
+				$( ".archive a" ).css( "color", "#27ae60" );
+				$( ".development" ).hide();
+				$( ".contain-to-grid" ).css( "background-color", "#27ae60" );
+				$( "#development" ).fadeTo( "slow", 0.5, function() {
+					//Animation Complete.
+				});
+				$( "#archive" ).fadeTo("slow", 1, function() {
+					//Animation Complete
+				});
+			});
 
-ul {margin:10px 20px;}
-li {margin:10px;}
-a:link, a:visited {color:#fff;}
+			$( "#development" ).click(function(){
+				$( ".contain-to-grid" ).css("background-color", "#2980b9" );
+				$( ".development" ).show();
+				$( ".archive" ).hide();
+				$( "#archive" ).fadeTo( "slow", 0.5, function() {
+					//Animation Complete
+				});
 
-</style>
+				$( "#development" ).fadeTo("slow", 1, function() {
+					//Animation Complete
+				});
 
-<!-- INSERT SHARPSPRING TRACKING CODE -->
-<!--<script type="text/javascript">
-    var _ss = _ss || [];
-    _ss.push(['_setDomain', 'https://koi-16K25SY.sharpspring.com/net']);
-    _ss.push(['_setAccount', 'KOI-1FC22Y0']);
-    _ss.push(['_trackPageView']);
-    (function() {
-        var ss = document.createElement('script');
-        ss.type = 'text/javascript'; ss.async = true;
-        ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-16K25SY.sharpspring.com/client/ss.js?ver=1.1.1';
-        var scr = document.getElementsByTagName('script')[0];
-        scr.parentNode.insertBefore(ss, scr);
-    })();
-</script>-->
-</head>
-<body>
-	<div class="block bc1">
-		<h1>dev.marketingincolor.com (new)</h1>
-	</div>
+			});
+		});
+		</script>
 
-	<div class="block bc2">
-		Development and Testing site for Marketing In Color Project work -
-	</div>
+		<!-- CSS -->
+		<style>
 
-	<div class="block c3">
-		Current Projects:
-        <ul>
-            <li><a href="./naviga">Naviga Test Site</a></li>
-            <li><a href="./stormguard">Storm Guard Test Site</a></li>
-            <li><a href="./easyenergy">Easy Energy Savings Test Site</a></li>
-        </ul>
-	</div>
+			* { margin: 0; }
+			html, body { height: 100%; }
 
-	<div class="block c3">
-		Upcoming Projects:
-        <ul>
-            <li><a href="./buddy">Base Buddypress Install</a></li>
-        </ul>
-	</div>
+			.center { margin: auto; width: 50%; padding: 10px; position: relative; }
+			.container { padding-top:2%; }
+			header { background-color: #7f8c8d; height:100px;}
+			header h1 { color:white; padding-top:1%;}
 
-	<div class="block c4">
-		Archived Projects:
-        <ul>
-            <li><a href="./buddy">Base Buddypress Install</a></li>
-            <li><a href="./madico">Sunscape Test Site</a></li>
-            <li><a href="./oscfhm">OSC FH Mgmt Test Site</a></li>
-        </ul>
-	</div>
 
-    <div>
-        <?php //TODO: fix method of automation for directory display, using examples here or other code
-            $d = dir(".");
-            echo "Path: " . $d->path . "\n";
-            echo "<ul>";
-            while (false !== ($entry = $d->read())) {
-                echo "<li><a href='{$entry}'>{$entry}</a></li>";
-            }
-            echo "</ul>";
-            $d->close();
-        ?>
+			.page-wrap {
+			  min-height: 100%;
+			  /* equal to footer height */
+			  margin-bottom: -142px; 
+			}
+			.page-wrap:after {
+			  content: "";
+			  display: block;
+			}
+			.site-footer, .page-wrap:after {
+			  height: 142px; 
+			}
+			.site-footer {
+			  background: orange;
+			}
 
-        <?php
-        function recurseDir($dir) {
-    	    if(is_dir($dir)) {
-        		if($dh = opendir($dir)){
-        			while($file = readdir($dh)){
-        				if($file != '.' && $file != '..'){
-        					if(is_dir($dir . $file)){
-        						echo $dir . $file;
-        						// since it is a directory we recurse it.
-        						recurseDir($dir . $file . '/');
-        					}else{
-        						echo "<a href='" . $dir . "/" . $file . "'>".  $file ."</a><br />" ;
-        					}
-        				}
-        			}
-        		}
-    		closedir($dh);
-        	}
-        }
-        recurseDir('.');
-        ?>
-    </div>
+			/*footer*/
+
+			.full-width { max-width: 1400px; }
+
+			.footer {
+			  background:#7f8c8d;
+			  width:100%;
+			  height:100px;
+			  position:absolute;
+			  bottom:0;
+			  left:0;
+			}
+
+			.footer i { font-size: 100px; }
+
+			.footer h4 {
+			  color: #fff;
+			  font-size: 1em;
+			  font-weight: 400;
+			  text-transform: uppercase;
+			  margin-top: 2.5rem;
+			  margin-bottom: 10px;
+			}
+
+			.footer p, .footer a {
+			  font-weight: 300;
+			  font-size: .8em;
+			  color: #fff;
+			}
+
+			@media only screen and (min-width: 40.063em) {
+			  .footer .columns:nth-child(n+2) {
+			    min-height: 280px;
+			  }
+			}
+			.footer-links {
+			  list-style-type: none;
+			}
+			.footer-links li {
+			  margin-top: .5em;
+			}
+		</style>
+
+
+		<!-- The Usual -->
+		<meta charset="UTF-8">
+		<title>MIC | Development</title>
+	</head>
+
+	<body>
+
+		<!-- Header -->
+		<header class="contain-to-grid">
+			<div class="row">
+				<h1 class="text-center">MIC Development</h1>
+			</div>
+
+		</header>
+
+		<div class="container center">
+			<?php
+
+	//Finished Sites
+	$finished = array (
+		"Marketing In Color" => "http://www.marketingincolor.com",
+		"Madico" => "http://www.madico.com",
+		"Evergreen Wellness" => "http://www.myevergreenwellness.com",
+		"StormGuard" => "http://www.stormguardrestoration.com",
+		"Redbeard Crafts" => "http://www.redbeardcrafts.com",
+		"Easy Energy" => "http://easyenergysavingtips.com"
+	);
+
+	//Sort $finished sites
+	asort($finished);
+
+	//Development Sites
+	$development = array (
+
+		"EGW Help Subdomain" => "helpegw",
+		"EGW Team Subdomain" => "teamegw",
+		"BuddyPress Base Install" => "buddy",
+		"Easy Energy" => "easyenergy",
+		"Evergreen Wellness" => "egw",
+		"HD Law Partners" => "hdlaw",
+		"Magento Base Install" => "magento",
+		"Marketing In Color" => "mic2015",
+		"MIC MA Tool" => "micmatool",
+		"Portico" => "portico",
+		"Redbeard Crafts" => "redbeard",
+		"Sunscape Films" => "sunscape",
+		"WordPress Test" => "wptest"
+	);
+
+	//Sort $development sites
+	asort($development);
+
+	echo '
+	<table>
+		<tbody>
+				<tr>
+				<a href="#" id="development" class="button radius" style="width:12em;">
+				<i class="fa fa-coffee" aria-hidden="true"></i>
+				Development</a>
+				&nbsp; &nbsp;
+				<a href="#" id="archive" style="width: 12em; background-color: #27ae60;" class="button radius" style="width:12em;">
+				<i class="fa fa-archive" aria-hidden="true"></i>
+				Completed</a>
+				&nbsp; &nbsp;
+
+			</tr>
+	';
+
+
+
+	foreach($development as $name => $link) {
+		echo ("<tr><td class=\"development\"><a href=\"" . "http://dev.marketingincolor.com/" . $link . "\">" . $name . "</a></td></tr>");
+		}
+
+	foreach($finished as $name => $link) {
+		echo ("<tr><td class=\"archive\"><a href=\"" . $link . "\">" . $name . "</a></td></tr>");
+		}
+
+		echo '</tbody></table>';
+?>
+
+
+		
+		</div>
+
+		<!-- Footer -->
+		<footer class="footer contain-to-grid">
+			<div class="row">
+	
+				</div>
+
+			</div>
+		</footer>
+
+		<!-- Foundation -->
+		<script src="https://cdn.jsdelivr.net/foundation/6.2.2/foundation.min.js"></script>
+		<script>
+			$(document).foundation();
+		</script>
 
 </body>
 </html>
