@@ -5,21 +5,11 @@
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
+		<!-- Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
 		<!-- Foundation -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.2/foundation.min.css" />
-
-		<!-- jQuery -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-		<script>
-		$( document ).ready(function() {
-
-			//Default to change colors
-			$( '.contain-to-grid' ).css( "background-color","#2980b9" );
-
-
-		});
-		</script>
 
 		<!-- CSS -->
 		<style>
@@ -31,7 +21,11 @@
 			.container { padding-top:2%; }
 			header { background-color: #7f8c8d; height:100px;}
 			header h1 { color:white; padding-top:1%;}
-
+			#header { background-color: #f28b00;}
+			#header img {width: 40%;}
+			table tbody td, table tbody th { color: #6a6b6d; }
+			a { color: #6a6b6d; font-family: open-sans, sans-serif; }
+			p { color: #6a6b6d; font-family: Open-Sans, sans-serif; }
 
 			.page-wrap {
 			  min-height: 100%;
@@ -91,8 +85,8 @@
 			  margin-top: .5em;
 			}
 			
-			.label.alert { width:120px; text-align:center; }
-			.label.success { width:120px; text-align:center; }
+			.label.alert { width:120px; text-align:center; background-color: #a97cca; }
+			.label.success { width:120px; text-align:center; background-color: #a9ad00 !important;}
 
 		</style>
 
@@ -106,9 +100,9 @@
 	<body>
 
 		<!-- Header -->
-		<header class="contain-to-grid">
+		<header id="header" class="contain-to-grid">
 			<div class="row">
-				<h1 class="text-center">MIC Development</h1>
+				<h1 class="text-center"><img src="../miclogo.png"></h1>
 			</div>
 		</header>
 
@@ -135,7 +129,7 @@
 
 					array
 					(
-						"name" =>"BuddyPress Install", 
+						"name" =>"BuddyPress Base Install", 
 						"path" => "buddy", 
 						"start date" => "start date", 
 						"end date" => "end date", 
@@ -153,11 +147,11 @@
 
 					array
 					(
-						"name" =>"Easy Energy", 
-						"path" => "easyenergy", 
+						"name" =>"Magento Base Install", 
+						"path" => "magento", 
 						"start date" => "start date", 
 						"end date" => "end date", 
-						"status" => "done"
+						"status" => "completed"
 					),
 
 					array
@@ -167,6 +161,96 @@
 						"start date" => "start date", 
 						"end date" => "end date", 
 						"status" => "done"
+					),
+
+					array
+					(
+						"name" =>"HD Law", 
+						"path" => "hdlaw", 
+						"start date" => "start date", 
+						"end date" => "end date", 
+						"status" => "done"
+					),
+
+					array
+					(
+						"name" =>"EGW Help Subdomain", 
+						"path" => "helpegw", 
+						"start date" => "start date", 
+						"end date" => "end date", 
+						"status" => "development"
+					),
+
+					array
+					(
+						"name" =>"EGW Team Subdomain", 
+						"path" => "teamegw", 
+						"start date" => "start date", 
+						"end date" => "end date", 
+						"status" => "development"
+					),
+
+					array
+					(
+						"name" =>"Portico", 
+						"path" => "portico", 
+						"start date" => "start date", 
+						"end date" => "end date", 
+						"status" => "completed"
+					),
+
+					array
+					(
+						"name" =>"Redbeard Crafts", 
+						"path" => "redbeard", 
+						"start date" => "start date", 
+						"end date" => "end date", 
+						"status" => "completed"
+					),
+
+					array
+					(
+						"name" =>"Stormguard Restoration", 
+						"path" => "stormguard", 
+						"start date" => "start date", 
+						"end date" => "end date", 
+						"status" => "completed"
+					),
+
+					array
+					(
+						"name" =>"Sunscape Films", 
+						"path" => "sunscape", 
+						"start date" => "start date", 
+						"end date" => "end date", 
+						"status" => "completed"
+					),
+
+					array
+					(
+						"name" =>"WordPress Testing", 
+						"path" => "wptest", 
+						"start date" => "start date", 
+						"end date" => "end date", 
+						"status" => "completed"
+					),
+
+					array
+					(
+						"name" =>"Marketing In Color", 
+						"path" => "mic2015", 
+						"start date" => "start date", 
+						"end date" => "end date", 
+						"status" => "completed"
+					),
+
+					array
+					(
+						"name" =>"Marketing Automation Tool", 
+						"path" => "micmatool", 
+						"start date" => "start date", 
+						"end date" => "end date", 
+						"status" => "development"
 					),
 			
 			  	);
