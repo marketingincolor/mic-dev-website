@@ -14,40 +14,10 @@
 		<script>
 		$( document ).ready(function() {
 
-			//Default to show only development tables
-			$( '.development').show(); 
-			$( '.archive' ).hide();
-
 			//Default to change colors
 			$( '.contain-to-grid' ).css( "background-color","#2980b9" );
 
-			//Show Hide on Button Clicks
-			$( "#archive" ).click(function(){
-				$( ".archive" ).show();
-				$( ".archive a" ).css( "color", "#27ae60" );
-				$( ".development" ).hide();
-				$( ".contain-to-grid" ).css( "background-color", "#27ae60" );
-				$( "#development" ).fadeTo( "slow", 0.5, function() {
-					//Animation Complete.
-				});
-				$( "#archive" ).fadeTo("slow", 1, function() {
-					//Animation Complete
-				});
-			});
 
-			$( "#development" ).click(function(){
-				$( ".contain-to-grid" ).css("background-color", "#2980b9" );
-				$( ".development" ).show();
-				$( ".archive" ).hide();
-				$( "#archive" ).fadeTo( "slow", 0.5, function() {
-					//Animation Complete
-				});
-
-				$( "#development" ).fadeTo("slow", 1, function() {
-					//Animation Complete
-				});
-
-			});
 		});
 		</script>
 
@@ -120,12 +90,17 @@
 			.footer-links li {
 			  margin-top: .5em;
 			}
+			
+			.label.alert { width:120px; text-align:center; }
+			.label.success { width:120px; text-align:center; }
+
 		</style>
 
 
 		<!-- The Usual -->
 		<meta charset="UTF-8">
 		<title>MIC | Development</title>
+
 	</head>
 
 	<body>
@@ -135,87 +110,129 @@
 			<div class="row">
 				<h1 class="text-center">MIC Development</h1>
 			</div>
-
 		</header>
 
 		<div class="container center">
+
 			<?php
 
-	//Finished Sites
-	$finished = array (
-		"Marketing In Color" => "http://www.marketingincolor.com",
-		"Madico" => "http://www.madico.com",
-		"Evergreen Wellness" => "http://www.myevergreenwellness.com",
-		"StormGuard" => "http://www.stormguardrestoration.com",
-		"Redbeard Crafts" => "http://www.redbeardcrafts.com",
-		"Easy Energy" => "http://easyenergysavingtips.com"
-	);
+				/*  Sites array
+				*	Should display Name | Path | Start Date | End Date | Status
+				* 	To use font awesome icons:
+				*  	Checkmark = "completed","done"
+				*  	Wrench = "development","testing" */
+			
+				$websites = array (
 
-	//Sort $finished sites
-	asort($finished);
+					array
+					(
+						"name" =>"Adams Testing Site", 
+						"path" => "adam-testing", 
+						"start date" => "start date", 
+						"end date" => "end date", 
+						"status" => "development"
+					),
 
-	//Development Sites
-	$development = array (
+					array
+					(
+						"name" =>"BuddyPress Install", 
+						"path" => "buddy", 
+						"start date" => "start date", 
+						"end date" => "end date", 
+						"status" => "done"
+					),
 
-		"EGW Help Subdomain" => "helpegw",
-		"EGW Team Subdomain" => "teamegw",
-		"BuddyPress Base Install" => "buddy",
-		"Easy Energy" => "easyenergy",
-		"Evergreen Wellness" => "egw",
-		"HD Law Partners" => "hdlaw",
-		"Magento Base Install" => "magento",
-		"Marketing In Color" => "mic2015",
-		"MIC MA Tool" => "micmatool",
-		"Portico" => "portico",
-		"Redbeard Crafts" => "redbeard",
-		"Sunscape Films" => "sunscape",
-		"WordPress Test" => "wptest"
-	);
+					array
+					(
+						"name" =>"My Evergreen Wellness", 
+						"path" => "egw", 
+						"start date" => "start date", 
+						"end date" => "end date", 
+						"status" => "development"
+					),
 
-	//Sort $development sites
-	asort($development);
+					array
+					(
+						"name" =>"Easy Energy", 
+						"path" => "easyenergy", 
+						"start date" => "start date", 
+						"end date" => "end date", 
+						"status" => "done"
+					),
 
-	echo '
-	<table>
-		<tbody>
-				<tr>
-				<a href="#" id="development" class="button radius" style="width:12em;">
-				<i class="fa fa-coffee" aria-hidden="true"></i>
-				Development</a>
-				&nbsp; &nbsp;
-				<a href="#" id="archive" style="width: 12em; background-color: #27ae60;" class="button radius" style="width:12em;">
-				<i class="fa fa-archive" aria-hidden="true"></i>
-				Completed</a>
-				&nbsp; &nbsp;
+					array
+					(
+						"name" =>"Easy Energy", 
+						"path" => "easyenergy", 
+						"start date" => "start date", 
+						"end date" => "end date", 
+						"status" => "done"
+					),
+			
+			  	);
 
-			</tr>
-	';
+			  	// Obtaining list of names to sort by
+				foreach ($websites as $key => $row) {
+					$name[$key]  = $row['name'];
+				}
+
+				//Sorting by Name
+				array_multisort($websites, SORT_ASC, $name);
 
 
+				//Checking status for Font Awesome, Awesome!
+				for ($row = 0; $row < count($websites); $row++) {
+			
+					for ($col = 0; $col < 5; $col++) {
+				
+						if ($websites[$row]["status"] === "done" || $websites[$row]["status"] === "completed") {
+							$websites[$row]["status"] = "<span class=\"round success label\"><i class=\"fa fa-check-circle\" aria-hidden=\"true\"></i> Completed</span>";
+						}
 
-	foreach($development as $name => $link) {
-		echo ("<tr><td class=\"development\"><a href=\"" . "http://dev.marketingincolor.com/" . $link . "\">" . $name . "</a></td></tr>");
-		}
-
-	foreach($finished as $name => $link) {
-		echo ("<tr><td class=\"archive\"><a href=\"" . $link . "\">" . $name . "</a></td></tr>");
-		}
-
-		echo '</tbody></table>';
-?>
-
+						else if ($websites[$row]["status"] === "development" || $websites[$row]["status"] === "testing") {
+							$websites[$row]["status"] = "<span class=\"round alert label\"><i class=\"fa fa-wrench\" aria-hidden=\"true\"></i> Development</span>";
+						}
+			
+					}
+				}
 
 		
+
+				// Set up the table
+				echo '
+				<table>
+					<tbody>
+						<th align="left">Name</th>
+						<th align="left">Start Date</th>
+						<th align="left">End Date</th>
+						<th align="left">Status</th>';
+
+				//loop through the websites and display
+				//count($websites) loops through all of our websites
+		
+				for ($row = 0; $row < count($websites); $row++) {
+						echo "<tr>";
+						echo "<td><a href=\"http://dev.marketingincolor.com" ."/" .$websites[$row]["path"]. "\">" . $websites[$row]["name"] . "</a></td>";
+						echo "<td>" . $websites[$row]["start date"]."</td>";
+						echo "<td>" . $websites[$row]["end date"]."</td>";
+						echo "<td>" . $websites[$row]["status"]."</td>";
+						echo "</tr>";
+
+				}
+
+				echo '</tbody></table>';
+			?>
+
 		</div>
 
-		<!-- Footer -->
+		<!-- Footer 
 		<footer class="footer contain-to-grid">
 			<div class="row">
 	
 				</div>
 
 			</div>
-		</footer>
+		</footer> -->
 
 		<!-- Foundation -->
 		<script src="https://cdn.jsdelivr.net/foundation/6.2.2/foundation.min.js"></script>
@@ -223,5 +240,5 @@
 			$(document).foundation();
 		</script>
 
-</body>
+	</body>
 </html>
