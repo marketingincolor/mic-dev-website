@@ -3,7 +3,7 @@
 	<head>
 
 		<!-- Font Awesome -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/16327b3582.css">
 
 		<!-- Fonts -->
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -280,12 +280,11 @@
 					}
 				}
 
-		
-
 				// Set up the table
 				echo '
 				<table>
 					<tbody>
+
 						<th align="left">Name</th>
 						<th align="left">Start Date</th>
 						<th align="left">End Date</th>
@@ -301,7 +300,6 @@
 						echo "<td>" . $websites[$row]["end date"]."</td>";
 						echo "<td>" . $websites[$row]["status"]."</td>";
 						echo "</tr>";
-
 				}
 
 				echo '</tbody></table>';
