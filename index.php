@@ -11,6 +11,9 @@
 		<!-- Foundation -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.2/foundation.min.css" />
 
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="">
+
 		<!-- CSS -->
 		<style>
 
