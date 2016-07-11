@@ -33,14 +33,14 @@
 			.page-wrap {
 			  min-height: 100%;
 			  /* equal to footer height */
-			  margin-bottom: -142px; 
+			  margin-bottom: -142px;
 			}
 			.page-wrap:after {
 			  content: "";
 			  display: block;
 			}
 			.site-footer, .page-wrap:after {
-			  height: 142px; 
+			  height: 142px;
 			}
 			.site-footer {
 			  background: orange;
@@ -87,7 +87,7 @@
 			.footer-links li {
 			  margin-top: .5em;
 			}
-			
+
 			.label.alert { width:120px; text-align:center; background-color: #a97cca; }
 			.label.success { width:120px; text-align:center; background-color: #a9ad00 !important;}
 
@@ -118,144 +118,135 @@
 				* 	To use font awesome icons:
 				*  	Checkmark = "completed","done"
 				*  	Wrench = "development","testing" */
-			
+
 				$websites = array (
 
 					array
 					(
-						"name" =>"Adams Testing Site", 
-						"path" => "adam-testing", 
-						"start date" => "start date", 
-						"end date" => "end date", 
+						"name" =>"BuddyPress Base Install",
+						"path" => "buddy",
+						"start date" => "02/10/15",
+						"end date" => "N/A",
+						"status" => "testing"
+					),
+
+					array
+					(
+						"name" =>"EGW Main Site & Landers",
+						"path" => "egw",
+						"start date" => "04/27/16",
+						"end date" => "Current",
 						"status" => "development"
 					),
 
 					array
 					(
-						"name" =>"BuddyPress Base Install", 
-						"path" => "buddy", 
-						"start date" => "start date", 
-						"end date" => "end date", 
+						"name" =>"Magento Test Install",
+						"path" => "magento",
+						"start date" => "12/11/14",
+						"end date" => "12/11/14",
+						"status" => "completed"
+					),
+
+					array
+					(
+						"name" =>"Easy Energy",
+						"path" => "easyenergy",
+						"start date" => "07/21/14",
+						"end date" => "08/06/14",
 						"status" => "done"
 					),
 
 					array
 					(
-						"name" =>"My Evergreen Wellness", 
-						"path" => "egw", 
-						"start date" => "start date", 
-						"end date" => "end date", 
-						"status" => "development"
-					),
-
-					array
-					(
-						"name" =>"Magento Base Install", 
-						"path" => "magento", 
-						"start date" => "start date", 
-						"end date" => "end date", 
-						"status" => "completed"
-					),
-
-					array
-					(
-						"name" =>"Easy Energy", 
-						"path" => "easyenergy", 
-						"start date" => "start date", 
-						"end date" => "end date", 
+						"name" =>"HD Law",
+						"path" => "hdlaw",
+						"start date" => "start date",
+						"end date" => "end date",
 						"status" => "done"
 					),
 
 					array
 					(
-						"name" =>"HD Law", 
-						"path" => "hdlaw", 
-						"start date" => "start date", 
-						"end date" => "end date", 
-						"status" => "done"
-					),
-
-					array
-					(
-						"name" =>"EGW Help Subdomain", 
-						"path" => "helpegw", 
-						"start date" => "start date", 
-						"end date" => "end date", 
+						"name" =>"EGW Help Subdomain",
+						"path" => "helpegw",
+						"start date" => "06/09/16",
+						"end date" => "current",
 						"status" => "development"
 					),
 
 					array
 					(
-						"name" =>"EGW Team Subdomain", 
-						"path" => "teamegw", 
-						"start date" => "start date", 
-						"end date" => "end date", 
+						"name" =>"EGW Team Subdomain",
+						"path" => "teamegw",
+						"start date" => "06/09/16",
+						"end date" => "current",
 						"status" => "development"
 					),
 
 					array
 					(
-						"name" =>"Portico", 
-						"path" => "portico", 
-						"start date" => "start date", 
-						"end date" => "end date", 
+						"name" =>"Portico",
+						"path" => "portico",
+						"start date" => "start date",
+						"end date" => "end date",
 						"status" => "completed"
 					),
 
 					array
 					(
-						"name" =>"Redbeard Crafts", 
-						"path" => "redbeard", 
-						"start date" => "start date", 
-						"end date" => "end date", 
+						"name" =>"Redbeard Crafts",
+						"path" => "redbeard",
+						"start date" => "start date",
+						"end date" => "end date",
 						"status" => "completed"
 					),
 
 					array
 					(
-						"name" =>"Stormguard Restoration", 
-						"path" => "stormguard", 
-						"start date" => "start date", 
-						"end date" => "end date", 
+						"name" =>"Stormguard Restoration",
+						"path" => "stormguard",
+						"start date" => "start date",
+						"end date" => "end date",
 						"status" => "completed"
 					),
 
 					array
 					(
-						"name" =>"Sunscape Films", 
-						"path" => "sunscape", 
-						"start date" => "start date", 
-						"end date" => "end date", 
+						"name" =>"Sunscape Films",
+						"path" => "sunscape",
+						"start date" => "start date",
+						"end date" => "end date",
 						"status" => "completed"
 					),
 
 					array
 					(
-						"name" =>"WordPress Testing", 
-						"path" => "wptest", 
-						"start date" => "start date", 
-						"end date" => "end date", 
+						"name" =>"WordPress Testing",
+						"path" => "wptest",
+						"start date" => "start date",
+						"end date" => "end date",
 						"status" => "completed"
 					),
 
 					array
 					(
-						"name" =>"Marketing In Color", 
-						"path" => "mic2015", 
-						"start date" => "start date", 
-						"end date" => "end date", 
+						"name" =>"Marketing In Color",
+						"path" => "mic2015",
+						"start date" => "start date",
+						"end date" => "end date",
 						"status" => "completed"
 					),
 
 					array
 					(
-						"name" =>"Marketing Automation Tool", 
-						"path" => "micmatool", 
-						"start date" => "start date", 
-						"end date" => "end date", 
+						"name" =>"Marketing Automation Tool",
+						"path" => "micmatool",
+						"start date" => "start date",
+						"end date" => "end date",
 						"status" => "development"
 					),
-			
+
 			  	);
 
 			  	// Obtaining list of names to sort by
@@ -269,9 +260,9 @@
 
 				//Checking status for Font Awesome, Awesome!
 				for ($row = 0; $row < count($websites); $row++) {
-			
+
 					for ($col = 0; $col < 5; $col++) {
-				
+
 						if ($websites[$row]["status"] === "done" || $websites[$row]["status"] === "completed") {
 							$websites[$row]["status"] = "<span class=\"round success label\"><i class=\"fa fa-check-circle\" aria-hidden=\"true\"></i> Completed</span>";
 						}
@@ -279,7 +270,7 @@
 						else if ($websites[$row]["status"] === "development" || $websites[$row]["status"] === "testing") {
 							$websites[$row]["status"] = "<span class=\"round alert label\"><i class=\"fa fa-wrench\" aria-hidden=\"true\"></i> Development</span>";
 						}
-			
+
 					}
 				}
 
@@ -295,7 +286,7 @@
 
 				//loop through the websites and display
 				//count($websites) loops through all of our websites
-		
+
 				for ($row = 0; $row < count($websites); $row++) {
 						echo "<tr>";
 						echo "<td><a href=\"http://dev.marketingincolor.com" ."/" .$websites[$row]["path"]. "\">" . $websites[$row]["name"] . "</a></td>";
@@ -310,10 +301,10 @@
 
 		</div>
 
-		<!-- Footer 
+		<!-- Footer
 		<footer class="footer contain-to-grid">
 			<div class="row">
-	
+
 				</div>
 
 			</div>
